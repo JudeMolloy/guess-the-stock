@@ -22,5 +22,6 @@ def play():
 
 @app.route('/game-over')
 def game_over():
+    # Save score
+    session['score'] = 0
     return render_template("game-over.html")
-nano
