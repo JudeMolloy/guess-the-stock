@@ -23,4 +23,3 @@ def play():
 @app.route('/game-over')
 def game_over():
     return render_template("game-over.html")
-nano
