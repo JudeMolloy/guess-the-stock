@@ -1,32 +1,47 @@
-{% extends "base.html" %}
-
-{% block content %}
+h{% extends "base.html" %} {% block content %}
 
 <h1><span id="timer">10</span> seconds remaining.</h1>
 
+<canvas id="myChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
-    var timer = 10; // x second timer.
-    var foo; // variable for clearInterval() function
+  var timer = 10; // x second timer.
+  var foo; // variable for clearInterval() function
 
-    function redirect() {
-        document.location.href = '{{ url_for('game_over') }}';
+  function redirect() {
+      document.location.href = '{{ url_for('game_over') }}';
+  }
+
+  function updateSecs() {
+      document.getElementById("timer").innerHTML = timer;
+      timer--;
+      if (timer == -1) {
+          clearInterval(foo);
+          redirect();
+      }
+  }
+
+  function countdownTimer() {
+      foo = setInterval(function () {
+          updateSecs()
+      }, 1000);
+  }
+
+  countdownTimer();
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
     }
-
-    function updateSecs() {
-        document.getElementById("timer").innerHTML = timer;
-        timer--;
-        if (timer == -1) {
-            clearInterval(foo);
-            redirect();
-        }
-    }
-
-    function countdownTimer() {
-        foo = setInterval(function () {
-            updateSecs()
-        }, 1000);
-    }
-
-    countdownTimer();
-    </script>
+  })
+</script>
 {% endblock %}
