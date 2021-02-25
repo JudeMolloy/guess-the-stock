@@ -1,8 +1,9 @@
-from flask import render_template, url_for, session
+from flask import render_template, url_for, session, request
 from werkzeug.utils import redirect
 
 from app import app
 from app.forms import NameForm
+from app.models import Leaderboard
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -16,12 +17,22 @@ def index():
     return render_template("enter-name.html", form=form)
 
 
-@app.route('/play')
+
+@app.route('/play', methods=['GET', 'POST'])
 def play():
+    #if request.method == "POST":
+
+    #else:
+        # answer =
+        # session['answer'] = answer
     return render_template("play.html")
+
 
 @app.route('/game-over')
 def game_over():
-    # Save score
+    # Save score THEN reset THEN render page.
+    score = session['score']
+    name = session['name']
+    leaderboard_entry = Leaderboard(name=name, score=score)
     session['score'] = 0
     return render_template("game-over.html")
