@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1><span id="timer">10</span> seconds remaining.</h1>
+
+<script>
+    var timer = 10; // x second timer.
+    var foo; // variable for clearInterval() function
+
+    function redirect() {
+        document.location.href = '{{ url_for('game_over') }}';
+    }
+
+    function updateSecs() {
+        document.getElementById("timer").innerHTML = timer;
+        timer--;
+        if (timer == -1) {
+            clearInterval(foo);
+            redirect();
+        }
+    }
+
+    function countdownTimer() {
+        foo = setInterval(function () {
+            updateSecs()
+        }, 1000);
+    }
+
+    countdownTimer();
+    </script>
+{% endblock %}
