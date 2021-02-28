@@ -7,7 +7,6 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
-import PrimeReact from "primereact/api";
 
 function App() {
   const [placeholder, setPlaceholder] = useState("Hi");
@@ -26,16 +25,16 @@ function App() {
         <h1>Guess the stock</h1>
       </header>
       <main>
-        <div className="p-d-flex p-jc-center">
-          <span className="p-float-label">
-            <InputText id="in" />
-            <label htmlFor="in">Username</label>
-          </span>
-          <Button label="Start" />
+        <div className="p-formgroup-inline p-jc-center">
+          <div className="p-field">
+            <InputText id="name" type="text" placeholder="Name" />
+          </div>
+          <Button type="button" label="Start" />
         </div>
-
-        <h2>Leaderboard</h2>
-        <Leaderboard />
+        <div className="p-m-6">
+          <h2>Leaderboard</h2>
+          <Leaderboard />
+        </div>
       </main>
       <footer>Jude & Michael</footer>
     </div>
