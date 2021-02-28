@@ -36,3 +36,9 @@ def game_over():
     leaderboard_entry = Leaderboard(name=name, score=score)
     session['score'] = 0
     return render_template("game-over.html")
+
+import time
+
+@app.route('/time')
+def get_current_time():
+    return {'result': "Hello World"}
