@@ -13,7 +13,7 @@ for name in stocks:
     tempdates, tempdata = [], []
     for data in object["data"]:
         if data["close"] != None:
-            tempdates.append(data["date"])
+            tempdates.append(data["date"][:10])
             tempdata.append(data["close"])
     price_dict= {
         "name": object["data"][0]["symbol"],
@@ -27,6 +27,6 @@ print(price_dict)
 # Dictionary format:
 # price_dict = {
 #   "name": "TSLA",
-#   "dates": [2020-10-06T00:00:00+0000", "2020-10-07T00:00:00+0000"],
+#   "dates": [2020-10-06", "2020-10-07"],
 #   "data": [420, 500]
 # }
