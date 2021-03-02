@@ -13,6 +13,14 @@ class Leaderboard(db.Model):
     def __repr__(self):
         return '<Leaderboard Entry: {} scored {}>'.format(self.name, self.score)
 
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete_from_db(self):
+        db.session.delete(self)
+        db.session.commit()
+
 
 class StockData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,3 +30,14 @@ class StockData(db.Model):
     def __init__(self, name, json_string):
         self.name = name
         self.json_string = json_string
+
+    def __repr__(self):
+        return '<Stock Data: {}>'.format(self.name)
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete_from_db(self):
+        db.session.delete(self)
+        db.session.commit()
