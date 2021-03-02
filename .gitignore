@@ -20,4 +20,9 @@
 
 npm-debug.log*
 yarn-debug.log*
+
+__pycache__
+app/__pycache__
 yarn-error.log*
+.idea/
+.env

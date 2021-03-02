@@ -2,16 +2,21 @@
 
 
 {% block content %}
+<div class="start">
+    <div class="text-center">
+        <h1>Guess the Stock!</h1>
+        <br>
+        <h2>Enter your name to start!</h2>
 
-<h1>Enter your name to start!</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.name(size=32, placeholder="Elon Musk (Doge King)") }}
+            </p>
+            <button type="submit" class="button center-block mt-4 cta">Play</button>
+        </form>
 
-<form action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.name.label }}<br>
-        {{ form.name(size=32, placeholder="Elon Musk (Doge King)") }}
-    </p>
-    <p>{{ form.submit() }}</p>
-</form>
+    </div>
+</div>
 
 {% endblock %}
