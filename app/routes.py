@@ -1,3 +1,5 @@
+import random
+
 from flask import render_template, url_for, session, request
 from werkzeug.utils import redirect
 
@@ -5,6 +7,7 @@ from app import app
 from app.forms import NameForm
 from app.models import Leaderboard, StockData
 from sqlalchemy import func
+from guess import Data
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -21,13 +24,17 @@ def index():
 
 @app.route('/play', methods=['GET', 'POST'])
 def play():
-    stock = StockData.query.order_by(func.random()).first()
+    stock = StockData.query.order_by(func.random()).first_or_404()
+    answer = stock.name
+    stocks = [x for x in Data.stocks if x != answer]
+    options = random.shuffle(random.sample(stocks, 3).append(answer))
     #if request.method == "POST":
 
     #else:
         # answer =
         # session['answer'] = answer
-    return render_template("play.html", stock_json_string=stock.json_string)
+    return render_template("play.html", stock_json_string=stock.json_string,
+                           a=options[0], b=options[1], c=options[2], d=options[3])
 
 
 @app.route('/game-over')
