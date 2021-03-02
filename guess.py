@@ -1,5 +1,8 @@
+import json
 import os
 import requests
+
+from app.models import StockData
 
 MARKET_STACK_API_KEY = os.getenv('MARKET_STACK_API_KEY')
 
@@ -21,6 +24,14 @@ for name in Data.stocks:
         "dates": tempdates[::-1],
         "data": tempdata[::-1]
     }
+
+    # Check if the stock is in the db.
+    stock = StockData.query.filter_by(name=price_dict.get("name")).first()
+
+    if not stock:
+        stock = StockData(name=price_dict.get("name"), json_string=json.dumps(price_dict))
+        stock.save_to_db()
+
     #if not in db
     #send to db
 print(price_dict)

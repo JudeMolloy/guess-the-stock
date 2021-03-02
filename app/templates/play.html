@@ -44,7 +44,10 @@
 
   countdownTimer();
 
-  var price_dict = {'name': 'PLTR', 'dates': ['2021-02-22', '2021-02-23', '2021-02-24', '2021-02-25', '2021-02-26', '2021-03-01'], 'data': [28.0, 26.75, 26.39, 23.96, 23.9, 24.81]}
+  var str = '{{ stock_json_string }}'
+
+  var price_dict = JSON.parse(str.replace(/&#34;/g,'"'));
+
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
