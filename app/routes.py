@@ -3,7 +3,8 @@ from werkzeug.utils import redirect
 
 from app import app
 from app.forms import NameForm
-from app.models import Leaderboard
+from app.models import Leaderboard, StockData
+from sqlalchemy import func
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -20,12 +21,13 @@ def index():
 
 @app.route('/play', methods=['GET', 'POST'])
 def play():
+    stock = StockData.query.order_by(func.random()).first()
     #if request.method == "POST":
 
     #else:
         # answer =
         # session['answer'] = answer
-    return render_template("play.html")
+    return render_template("play.html", stock_json_string=stock.json_string)
 
 
 @app.route('/game-over')

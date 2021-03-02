@@ -17,8 +17,8 @@ class Leaderboard(db.Model):
 class StockData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64))
-    data = db.Column(db.String)
+    json_string = db.Column(db.String)
 
-    def __init__(self, name, data):
+    def __init__(self, name, json_string):
         self.name = name
-        self.data = data
+        self.json_string = json_string
