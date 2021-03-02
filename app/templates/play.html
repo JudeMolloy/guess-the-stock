@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% block content %}
 
 <h1><span id="timer">10</span> seconds remaining.</h1>
-
-<canvas id="myChart"></canvas>
-
+<div style="width: 80%; height: 20%; margin: auto">
+  <canvas id="myChart"></canvas>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
   var timer = 10; // x second timer.
@@ -30,9 +30,17 @@
 
   countdownTimer();
 
+  var price_dict = {
+    "name": "TSLA",
+    "dates": [2020-10-06", "2020-10-07"],
+    "data": [420, 500]
+    }
+
+
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
       type: 'line',
+      responsive: true,
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
