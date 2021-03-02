@@ -3,8 +3,22 @@
 <h1><span id="timer">10</span> seconds remaining.</h1>
 <div style="width: 80%; height: 20%; margin: auto">
   <canvas id="myChart"></canvas>
+  <div class="grid-container">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <button type="submit" class="grid-item button center-block mt-4 cta">
+      FACE
+    </button>
+    <button type="submit" class="grid-item button center-block mt-4 cta">
+      PLTR
+    </button>
+    <button type="submit" class="grid-item button center-block mt-4 cta">
+      AAPL
+    </button>
+    <button type="submit" class="grid-item button center-block mt-4 cta">
+      TSLA
+    </button>
+  </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
   var timer = 10; // x second timer.
   var foo; // variable for clearInterval() function
@@ -30,26 +44,26 @@
 
   countdownTimer();
 
-  var price_dict = {
-    "name": "TSLA",
-    "dates": [2020-10-06", "2020-10-07"],
-    "data": [420, 500]
-    }
-
+  var price_dict = {'name': 'PLTR', 'dates': ['2021-02-22', '2021-02-23', '2021-02-24', '2021-02-25', '2021-02-26', '2021-03-01'], 'data': [28.0, 26.75, 26.39, 23.96, 23.9, 24.81]}
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
       type: 'line',
       responsive: true,
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: price_dict["dates"],
         datasets: [{
             lineTension: 0,
             pointBorderRadius: 0,
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    }
+            data: price_dict["data"]
+        }]},
+      options: {
+          legend: {
+              display: false
+          }
+      }
+
   })
 </script>
 {% endblock %}

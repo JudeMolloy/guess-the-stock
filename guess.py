@@ -15,14 +15,13 @@ for name in stocks:
         if data["close"] != None:
             tempdates.append(data["date"][:10])
             tempdata.append(data["close"])
-    price_dict= {
+    price_dict = {
         "name": object["data"][0]["symbol"],
-        "dates": tempdates,
-        "data": tempdata
+        "dates": tempdates[::-1],
+        "data": tempdata[::-1]
     }
     #if not in db
     #send to db
-    
 print(price_dict)
 # Dictionary format:
 # price_dict = {

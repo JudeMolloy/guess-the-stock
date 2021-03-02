@@ -1,33 +1,43 @@
 * {
-    font-family: 'Bangers';
+  font-family: "Bangers";
 }
 
 #bg {
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    min-height: 100vh;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  min-height: 100vh;
 }
 
 .button {
-  color: #FFF;
+  color: #fff;
   font-weight: 600;
   border: none;
   border-radius: 2rem;
   padding: 0.6rem 3rem;
-  background: #FF6384;
-  box-shadow: 0 4px 4px rgba(0,0,0, 0.2);
+  background: #ff6384;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   font-size: 2rem;
 }
 
-h1, h2, h3, h4, h5 {
-    color: #2C3539;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #2c3539;
 }
 
 form p {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .start {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 50px;
 }
