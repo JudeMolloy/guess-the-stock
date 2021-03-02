@@ -12,3 +12,13 @@ class Leaderboard(db.Model):
 
     def __repr__(self):
         return '<Leaderboard Entry: {} scored {}>'.format(self.name, self.score)
+
+
+class StockData(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    data = db.Column(db.String)
+
+    def __init__(self, name, data):
+        self.name = name
+        self.data = data
