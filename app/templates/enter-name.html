@@ -2,8 +2,15 @@
 <div class="start">
   <div class="text-center mt-4">
     <h1>Guess the Stock!</h1>
+    <img src="{{ url_for('static', filename='img/stonks.png') }}" />
     <br />
     <h2>Enter your name to start!</h2>
+
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+      <p>{{ form.name(size=16, placeholder="Elon Musk (Doge King)") }}</p>
+      <button type="submit" class="button center-block mt-4 cta">Play</button>
+    </form>
 
     <form action="" method="post">
       {{ form.hidden_tag() }}
