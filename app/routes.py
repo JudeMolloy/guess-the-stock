@@ -19,6 +19,7 @@ def index():
         session['score'] = 0
         return redirect(url_for("play"))
     leaderboard_data = Leaderboard.query.order_by(desc(Leaderboard.score)).limit(10).all()
+    print(leaderboard_data)
     return render_template("enter-name.html", form=form, leaderboard=leaderboard_data)
 
 
@@ -57,6 +58,7 @@ def game_over():
     score = session['score']
     name = session['name']
     leaderboard_entry = Leaderboard(name=name, score=score)
+    leaderboard_entry.save_to_db()
     session['score'] = 0
 
     img = "elon-cry.gif"
