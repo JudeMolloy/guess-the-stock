@@ -2,6 +2,8 @@
 <script>
   function redirect() {
   document.location.href = '{{ url_for('play') }}'; }
+  function tohome() {
+  document.location.href = '{{ url_for('index') }}'; }
 </script>
 
 <div class="text-center mt-4">
@@ -19,6 +21,9 @@
     class="button center-block mt-4 cta"
   >
     Play again
+  </button>
+  <button type="submit" onClick="tohome()" class="button center-block mt-4 cta">
+    Home
   </button>
 </div>
 

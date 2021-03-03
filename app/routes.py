@@ -9,7 +9,6 @@ from app.models import Leaderboard, StockData
 from sqlalchemy import func, desc
 from data import Data
 
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()

@@ -72,6 +72,20 @@
 
   var price_dict = JSON.parse(str.replace(/&#34;/g,'"'));
 
+  var months = {
+    "01": "Jan",
+    "02": "Feb",
+    "03": "Mar",
+    "04": "Apr",
+    "05": "May",
+    "06": "Jun",
+    "07": "Jul",
+    "08": "Aug",
+    "09": "Sep",
+    "10": "Oct",
+    "11": "Nov",
+    "12": "Dec"
+   }
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
@@ -86,9 +100,31 @@
             data: price_dict["data"]
         }]},
       options: {
+          responsive: true,
           legend: {
               display: false
-          }
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                callback: function(value, index, values) {
+                        return '$' + value;
+                      }
+              }
+            }],
+            xAxes: [{
+              scaleLabel: {
+                display: true
+              },
+              ticks: {
+                callback: function(value, index, values) {
+                        return months[value.substr(5,2)] + " '" + value.substr(2,2);
+                      },
+                autoSkip: true,
+                maxTicksLimit: 10
+            }
+          }]
+        }
       }
 
   })
