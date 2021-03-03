@@ -18,7 +18,8 @@ def index():
         session['name'] = form.name.data
         session['score'] = 0
         return redirect(url_for("play"))
-    return render_template("enter-name.html", form=form)
+    leaderboarddummy = [{"name": "Michael", "score":100}, {"name":"Jude", "score":99}]
+    return render_template("enter-name.html", form=form, leaderboard=leaderboarddummy)
 
 
 
@@ -38,6 +39,7 @@ def play():
         # session['answer'] = answer
     print("stock json")
     print(stock.json_string)
+
     return render_template("play.html", stock_json_string=stock.json_string,
                            a=options[0], b=options[1], c=options[2], d=options[3])
 

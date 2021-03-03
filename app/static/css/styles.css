@@ -41,3 +41,14 @@ form p {
   grid-template-columns: auto auto auto auto;
   grid-gap: 50px;
 }
+
+table,
+th,
+td {
+  margin: auto;
+  font-size: 40px;
+}
+
+td {
+  color: #4d4d4d;
+}

@@ -10,6 +10,7 @@ pandas = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 requests = "*"
+alembic = "*"
 
 [dev-packages]
 
