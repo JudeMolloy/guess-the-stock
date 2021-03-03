@@ -6,7 +6,7 @@ from werkzeug.utils import redirect
 from app import app
 from app.forms import NameForm
 from app.models import Leaderboard, StockData
-from sqlalchemy import func
+from sqlalchemy import func, desc
 from guess import Data
 
 
@@ -18,7 +18,8 @@ def index():
         session['name'] = form.name.data
         session['score'] = 0
         return redirect(url_for("play"))
-    return render_template("enter-name.html", form=form)
+    leaderboard_data = Leaderboard.query.order_by(desc(Leaderboard.score)).limit(10).all()
+    return render_template("enter-name.html", form=form, leaderboard_data=leaderboard_data)
 
 
 
@@ -36,7 +37,7 @@ def play():
         else:
             return redirect(url_for('game_over'))
 
-    score = session['score']
+
     stock = StockData.query.order_by(func.random()).first_or_404()
     answer = stock.name
     session['answer'] = answer
@@ -44,6 +45,7 @@ def play():
     options = random.sample(stocks, 3)
     options.append(answer)
     random.shuffle(options)
+    score = session['score']
 
     return render_template("play.html", score=score, stock_json_string=stock.json_string,
                            a=options[0], b=options[1], c=options[2], d=options[3])

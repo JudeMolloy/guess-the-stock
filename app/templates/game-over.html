@@ -3,5 +3,10 @@
 {% block content %}
 
 <h1>Game Over!</h1>
+<br>
+<img src="{{ url_for('static', filename='img/zucc.webp') }}">
+<br>
+<br>
+<h1>{{ name }} scored {{ score }} point{{ score|pluralize }}.</h1>
 
 {% endblock %}
