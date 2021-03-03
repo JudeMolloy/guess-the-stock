@@ -18,6 +18,10 @@
   font-size: 2rem;
 }
 
+.stock {
+  font-family: "Lato";
+}
+
 h1,
 h2,
 h3,
@@ -51,4 +55,17 @@ td {
 
 td {
   color: #4d4d4d;
+}
+
+.left,
+.right {
+  width: auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }

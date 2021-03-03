@@ -1,28 +1,47 @@
 {% extends "base.html" %} {% block content %}
 
-<diu class="row">
-<h1>Timer: <span id="timer">10</span></h1>
-<h1 class=""text-end> Score: {{ score }}</h1>
-</diu>
 <div style="width: 80%; height: 20%; margin: auto">
+  <h1 class="left">Timer: <span id="timer">10</span></h1>
+  <h1 class="right" text-end>Score: {{ score }}</h1>
   <canvas id="myChart"></canvas>
-  <div class="grid-container">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <form method="post">
-      <button name="selected_answer" value="{{ a }}" type="submit" class="grid-item button center-block mt-4 cta">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <form method="post">
+    <div class="grid-container">
+      <button
+        name="selected_answer"
+        value="{{ a }}"
+        type="submit"
+        class="grid-item button stock center-block mt-4 cta"
+      >
         {{ a }}
       </button>
-      <button name="selected_answer" value="{{ b }}" type="submit" class="grid-item button center-block mt-4 cta">
+      <button
+        name="selected_answer"
+        value="{{ b }}"
+        type="submit"
+        class="grid-item button stock center-block mt-4 cta"
+      >
         {{ b }}
       </button>
-      <button name="selected_answer" value="{{ c }}" type="submit" class="grid-item button center-block mt-4 cta">
+      <button
+        name="selected_answer"
+        value="{{ c }}"
+        type="submit"
+        class="grid-item button stock center-block mt-4 cta"
+      >
         {{ c }}
       </button>
-      <button name="selected_answer" value="{{ d }}" type="submit" class="grid-item button center-block mt-4 cta">
+      <button
+        name="selected_answer"
+        value="{{ d }}"
+        type="submit"
+        class="grid-item button stock center-block mt-4 cta"
+      >
         {{ d }}
       </button>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
 <script>
   var timer = 10; // x second timer.
