@@ -18,9 +18,8 @@
       </tr>
       {% for entry in leaderboard %}
       <tr>
-        {% for key, value in entry.items() %}
-        <td>{{ value }}</td>
-        {% endfor %}
+        <td>{{ entry.name }}</td>
+        <td>{{ entry.score }}</td>
       </tr>
       {% endfor %}
     </table>
