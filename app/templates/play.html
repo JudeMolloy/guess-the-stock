@@ -1,22 +1,27 @@
 {% extends "base.html" %} {% block content %}
 
-<h1><span id="timer">10</span> seconds remaining.</h1>
+<diu class="row">
+<h1>Timer: <span id="timer">10</span></h1>
+<h1 class=""text-end> Score: {{ score }}</h1>
+</diu>
 <div style="width: 80%; height: 20%; margin: auto">
   <canvas id="myChart"></canvas>
   <div class="grid-container">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <button type="submit" class="grid-item button center-block mt-4 cta">
-      {{ a }}
-    </button>
-    <button type="submit" class="grid-item button center-block mt-4 cta">
-      {{ b }}
-    </button>
-    <button type="submit" class="grid-item button center-block mt-4 cta">
-      {{ c }}
-    </button>
-    <button type="submit" class="grid-item button center-block mt-4 cta">
-      {{ d }}
-    </button>
+    <form method="post">
+      <button name="selected_answer" value="{{ a }}" type="submit" class="grid-item button center-block mt-4 cta">
+        {{ a }}
+      </button>
+      <button name="selected_answer" value="{{ b }}" type="submit" class="grid-item button center-block mt-4 cta">
+        {{ b }}
+      </button>
+      <button name="selected_answer" value="{{ c }}" type="submit" class="grid-item button center-block mt-4 cta">
+        {{ c }}
+      </button>
+      <button name="selected_answer" value="{{ d }}" type="submit" class="grid-item button center-block mt-4 cta">
+        {{ d }}
+      </button>
+    </form>
   </div>
 </div>
 <script>
