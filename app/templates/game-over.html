@@ -1,14 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
-
-<h1>Game Over!</h1>
-<br>
-<h1>{{ message }}</h1>
-<br>
-<img src="{{ url_for('static', filename='img/') }}{{ img }}">
-<br>
-<br>
-<h1>{{ name }} scored {{ score }} point{{ score|pluralize }}.</h1>
+<div class="text-center mt-4">
+  <h1>Game Over!</h1>
+  <br />
+  <h1>{{ message }}</h1>
+  <br />
+  <img src="{{ url_for('static', filename='img/') }}{{ img }}" />
+  <br />
+  <br />
+  <h1>You scored {{ score }} point{{ score|pluralize }}.</h1>
+</div>
 
 {% endblock %}
