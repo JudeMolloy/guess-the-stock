@@ -7,7 +7,7 @@ from app import app
 from app.forms import NameForm
 from app.models import Leaderboard, StockData
 from sqlalchemy import func, desc
-from guess import Data
+from data import Data
 
 
 @app.route('/', methods=['GET', 'POST'])
