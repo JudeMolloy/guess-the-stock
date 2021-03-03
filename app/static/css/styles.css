@@ -50,6 +50,7 @@ table,
 th,
 td {
   margin: auto;
+  padding: 100px;
   font-size: 40px;
 }
 
