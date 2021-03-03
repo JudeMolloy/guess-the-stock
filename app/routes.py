@@ -58,4 +58,19 @@ def game_over():
     name = session['name']
     leaderboard_entry = Leaderboard(name=name, score=score)
     session['score'] = 0
-    return render_template("game-over.html", name=name, score=score)
+
+    img = "elon-cry.gif"
+    message = "That was so bad you made Elon cry."
+
+    if score > 9:
+        img = "jordan.gif"
+        message = "You are The Wolf of Wall Street."
+    elif score > 4:
+        img = "mark-cuban.gif"
+        message = "Mark Cuban thinks you have potential."
+    elif score > 0:
+        img = "zucc.webp"
+        message = "Go back to eating toast without butter like Zucc."
+
+
+    return render_template("game-over.html", name=name, score=score, img=img, message=message)

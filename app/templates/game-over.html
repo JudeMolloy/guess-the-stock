@@ -4,7 +4,9 @@
 
 <h1>Game Over!</h1>
 <br>
-<img src="{{ url_for('static', filename='img/zucc.webp') }}">
+<h1>{{ message }}</h1>
+<br>
+<img src="{{ url_for('static', filename='img/') }}{{ img }}">
 <br>
 <br>
 <h1>{{ name }} scored {{ score }} point{{ score|pluralize }}.</h1>
