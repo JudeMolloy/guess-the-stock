@@ -1,4 +1,8 @@
 {% extends 'base.html' %} {% block content %}
+<script>
+  function redirect() {
+  document.location.href = '{{ url_for('play') }}'; }
+</script>
 
 <div class="text-center mt-4">
   <h1>Game Over!</h1>
@@ -9,6 +13,13 @@
   <br />
   <br />
   <h1>You scored {{ score }} point{{ score|pluralize }}.</h1>
+  <button
+    type="submit"
+    onClick="redirect()"
+    class="button center-block mt-4 cta"
+  >
+    Play again
+  </button>
 </div>
 
 {% endblock %}

@@ -22,8 +22,6 @@ def index():
     print(leaderboard_data)
     return render_template("enter-name.html", form=form, leaderboard=leaderboard_data)
 
-
-
 @app.route('/play', methods=['GET', 'POST'])
 def play():
 
