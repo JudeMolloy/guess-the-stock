@@ -26,5 +26,5 @@ app/__pycache__
 yarn-error.log*
 .idea/
 .env
-*.db
 app.db
+env
