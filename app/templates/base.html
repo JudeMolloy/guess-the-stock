@@ -10,7 +10,10 @@
       crossorigin="anonymous"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -20,31 +23,36 @@
   <body>
     <section id="bg">
       <div class="container">
-
         <div class="row">
-            <div class="col-12 col-md-6">
-                <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='img/rocket.png') }}"><h2 id="title">GUESS THE STOCK!</h2></a>
-            </div>
-            <div class="col-12 col-md-6 text-right ml-auto">
-
-                <ul class="nav justify-content-end">
-                    <!--<li class="nav-item">
-                    <a class="underline" href="/">about</a>
-                  </li>-->
-                  <li class="nav-item">
-                    <a class="underline" href="{{ url_for('about') }}">ABOUT</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="underline" href="{{ url_for('leaderboard') }}">LEADERBOARDS</a>
-                  </li>
-                </ul>
-            </div>
+          <div class="col-12 col-md-6">
+            <a href="{{ url_for('index') }}"
+              ><img
+                id="logo"
+                src="{{ url_for('static', filename='img/rocket.png') }}"
+              />
+              <h2 id="title">GUESS THE STOCK!</h2></a
+            >
+          </div>
+          <div class="col-12 col-md-6 text-right ml-auto">
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="underline play" href="{{ url_for('index') }}">Play</a>
+              </li>
+              <li class="nav-item">
+                <a class="underline about" href="{{ url_for('about') }}"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="underline lb" href="{{ url_for('leaderboard') }}"
+                  >Leaderboard</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {% block content %}
-
-        {% endblock %}
-
+        {% block content %} {% endblock %}
       </div>
     </section>
   </body>

@@ -1,9 +1,14 @@
 {% extends "base.html" %} {% block content %}
-
+<style>
+  .lb,
+  .about {
+    color: #999;
+  }
+</style>
 <div class="center">
   <h1 class="left">TIMER: <span id="timer">10</span></h1>
   <h1 class="right">SCORE: {{ score }}</h1>
-  <canvas id="myChart" ></canvas>
+  <canvas id="myChart"></canvas>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <form method="post">

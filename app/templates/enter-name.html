@@ -1,15 +1,26 @@
 {% extends "base.html" %} {% block content %}
+<style>
+  .lb,
+  .about {
+    color: #999;
+  }
+</style>
 <div class="start center">
   <div class="text-center mt-4">
-    <img id="result-img" style="min-width: 20rem;" src="{{ url_for('static', filename='img/stocks.gif') }}" />
-    <h2>ENTER YOUR NAME TO START!</h2>
+    <img
+      id="result-img"
+      style="min-width: 20rem"
+      src="{{ url_for('static', filename='img/stocks.gif') }}"
+    />
+    <h2>ENTER NAME</h2>
 
     <form action="" method="post" style="padding-bottom: 100px">
       {{ form.hidden_tag() }}
       <p>{{ form.name(size=16, placeholder="Elon Musk (Doge King)") }}</p>
-      <button type="submit" class="button play-button center-block mt-4 cta">PLAY</button>
+      <button type="submit" class="button play-button center-block mt-4 cta">
+        PLAY
+      </button>
     </form>
-
   </div>
 </div>
 

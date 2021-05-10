@@ -1,47 +1,64 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
 }
 
 a {
-    text-decoration: none;
-    color: #13C16D;
+  text-decoration: none;
+  color: #13c16d;
 }
 
 a:hover {
-    color: #11AD62;
+  color: #11ad62;
 }
 
 .container {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-.center {
+/* .center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 @media screen and (max-width: 1272px) {
-    .center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin-top: 7rem;
-    }
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 7rem;
+  }
 }
 
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .center {
+    position: relative;
+    display: block;
+    clear: both;
+  }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .center {
+    position: relative;
+    display: block;
+    clear: both;
+  }
+}
 
 #logo {
-    display: inline;
-    max-height: 2rem;
-    margin: 0 0.25rem 0.5rem 0.25rem;
+  display: inline;
+  max-height: 2rem;
+  margin: 0 0.25rem 0.5rem 0.25rem;
 }
 
 #title {
-    display: inline;
+  display: inline;
 }
 
 #bg {
@@ -51,14 +68,14 @@ a:hover {
 }
 
 .nav-item {
-    margin: 0.25rem 1rem 0 1rem;
+  margin: 0.25rem 1rem 0 1rem;
 }
 
 #result-img {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-    max-width: 90%;
-    border-radius: 0.5rem;
-    margin: 1rem 0 1rem 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  border-radius: 0.5rem;
+  margin: 1rem 0 1rem 0;
 }
 
 .button {
@@ -66,20 +83,19 @@ a:hover {
   border: none;
   border-radius: 0.3rem;
   padding: 0.6rem 3rem;
-  background: #13C16D;
+  background: #13c16d;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   font-size: 2rem;
   margin: 0 0.5rem 0 0.5rem;
 }
 
 .play-button {
-    padding: 0.6rem 6rem;
+  padding: 0.6rem 6rem;
 }
 
 .button:hover {
-    background: #11AD62;
+  background: #11ad62;
 }
-
 
 h1,
 h2,
@@ -132,10 +148,10 @@ td {
 }
 
 #leaderboard-title {
-    text-align: center;
-    margin: 2rem 0 2rem 0;
+  text-align: center;
+  margin: 2rem 0 2rem 0;
 }
 
 .chart {
-    max-width: 90%;
+  max-width: 90%;
 }
