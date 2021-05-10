@@ -7,7 +7,6 @@ from app import app
 from app.forms import NameForm
 from app.models import Leaderboard, StockData
 from sqlalchemy import func, desc
-from data import Data
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -37,9 +36,12 @@ def play():
 
 
     stock = StockData.query.order_by(func.random()).first_or_404()
+    stocks = StockData.query.all()
+    stocks = list(map(lambda x:x.name, stocks))
+    print(stocks)
     answer = stock.name
     session['answer'] = answer
-    stocks = [x for x in Data.stocks if x != answer]
+    stocks = [x for x in stocks if x != answer]
     options = random.sample(stocks, 3)
     options.append(answer)
     random.shuffle(options)
