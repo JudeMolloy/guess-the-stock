@@ -1,6 +1,6 @@
 import random
 
-from flask import render_template, url_for, session, request
+from flask import render_template, url_for, session, request, flash
 from werkzeug.utils import redirect
 
 from app import app
@@ -17,6 +17,8 @@ def index():
         session['name'] = form.name.data
         session['score'] = 0
         return redirect(url_for("play"))
+    if len(form.errors.items()) > 0:
+        flash("Name too long")
     return render_template("enter-name.html", form=form)
 
 

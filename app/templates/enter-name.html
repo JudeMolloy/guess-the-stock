@@ -17,6 +17,9 @@
     <form action="" method="post" style="padding-bottom: 100px">
       {{ form.hidden_tag() }}
       <p>{{ form.name(size=16, placeholder="Elon Musk (Doge King)") }}</p>
+      {% for message in get_flashed_messages() %}
+      <p style="color: #ff3232">Error: {{ message }}</p>
+      {% endfor %}
       <button type="submit" class="button play-button center-block mt-4 cta">
         PLAY
       </button>
