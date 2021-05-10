@@ -14,9 +14,9 @@
     />
     <h2>ENTER NAME</h2>
 
-    <form action="" method="post" style="padding-bottom: 100px">
+    <form action="" method="post">
       {{ form.hidden_tag() }}
-      <p>{{ form.name(size=16, placeholder="Elon Musk (Doge King)") }}</p>
+      <p>{{ form.name(size=15, placeholder="Elon Musk (Doge King)") }}</p>
       {% for message in get_flashed_messages() %}
       <p style="color: #ff3232">Error: {{ message }}</p>
       {% endfor %}
