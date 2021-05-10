@@ -162,6 +162,7 @@ td {
   .grid-container {
     grid-template-columns: auto;
     grid-row-gap: 2rem;
+    padding-bottom: 2rem;
   }
   table,
   th,
