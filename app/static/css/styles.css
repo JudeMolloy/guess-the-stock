@@ -88,6 +88,10 @@ main {
   padding-bottom: 100px;
 }
 
+.nav {
+  justify-content: flex-end;
+}
+
 .nav-item {
   margin: 0.25rem 1rem 0 1rem;
 }
@@ -142,7 +146,6 @@ form p {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 50px;
 }
 
 table,
@@ -177,4 +180,32 @@ td {
 
 .chart {
   max-width: 90%;
+}
+
+/* phones */
+@media only screen and (max-width: 768px) {
+  .row,
+  .nav {
+    text-align: center;
+    justify-content: center;
+  }
+  .play-center {
+    height: 40vh;
+    padding: 5vh;
+  }
+  .grid-container {
+    grid-template-columns: auto;
+    grid-row-gap: 2rem;
+  }
+  table,
+  th,
+  td {
+    font-size: 7vw;
+  }
+  .names {
+    padding: 0 5vw 0;
+  }
+  .scores {
+    padding: 0 0 0 5vw;
+  }
 }

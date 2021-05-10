@@ -9,15 +9,20 @@
   <h2 id="leaderboard-title">&#127942; LEADERBOARD &#127942;</h2>
   <table>
     <tr>
-      <th class="lb-head" style="text-decoration: underline">NAME</th>
-      <th class="lb-head" style="color: #13c16d; text-decoration: underline">
+      <th class="lb-head names" style="text-decoration: underline">NAME</th>
+      <th
+        class="lb-head scores"
+        style="color: #13c16d; text-decoration: underline"
+      >
         SCORE
       </th>
     </tr>
     {% for entry in leaderboard %}
     <tr>
-      <td>{{ entry.name }}</td>
-      <td style="color: #13c16d; text-align: center">{{ entry.score }}</td>
+      <td class="names">{{ entry.name }}</td>
+      <td class="scores" style="color: #13c16d; text-align: center">
+        {{ entry.score }}
+      </td>
     </tr>
     {% endfor %}
   </table>
