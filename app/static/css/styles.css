@@ -1,3 +1,12 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
@@ -14,6 +23,13 @@ a:hover {
 
 .container {
   margin-top: 1rem;
+}
+
+.center,
+main {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 /* .center {
@@ -101,7 +117,9 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+input,
+textarea {
   color: #2c3539;
   font-weight: 900;
 }
