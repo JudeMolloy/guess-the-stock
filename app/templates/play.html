@@ -5,7 +5,7 @@
     color: #999;
   }
 </style>
-<div class="center">
+<div class="play-center">
   <h1 class="left">TIMER: <span id="timer">10</span></h1>
   <h1 class="right">SCORE: {{ score }}</h1>
   <canvas id="myChart"></canvas>
@@ -106,6 +106,7 @@
         }]},
       options: {
           responsive: true,
+          maintainAspectRatio: false,
           legend: {
               display: false
           },

@@ -32,6 +32,11 @@ main {
   animation-fill-mode: forwards;
 }
 
+.play-center {
+  height: 60vh;
+  padding: 5vh;
+}
+
 /* .center {
   position: absolute;
   top: 50%;
@@ -39,7 +44,7 @@ main {
   transform: translate(-50%, -50%);
 } */
 
-@media screen and (max-width: 1272px) {
+/* @media screen and (max-width: 1272px) {
   .center {
     position: absolute;
     top: 50%;
@@ -50,7 +55,7 @@ main {
 }
 
 /* ----------- Non-Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+/* @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .center {
     position: relative;
     display: block;
@@ -59,13 +64,13 @@ main {
 }
 
 /* ----------- Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+/* @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .center {
     position: relative;
     display: block;
     clear: both;
   }
-}
+} */
 
 #logo {
   display: inline;

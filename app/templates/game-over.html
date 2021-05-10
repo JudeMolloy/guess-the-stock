@@ -12,9 +12,9 @@
   }
 </style>
 <div class="text-center center">
-  <h1 style="font-size: 4rem; margin: 1rem 0 0 0">GAME OVER!</h1>
+  <h1 style="margin: 1rem 0 0 0">GAME OVER!</h1>
   <br />
-  <h1>{{ message }}</h1>
+  <h3>{{ message }}</h3>
   <br />
   <img
     id="result-img"
@@ -22,7 +22,7 @@
   />
   <br />
   <br />
-  <h1>YOU SCORED {{ score }} POINT{{ score|pluralize|upper }}.</h1>
+  <h3>YOU SCORED {{ score }} POINT{{ score|pluralize|upper }}.</h3>
   <a href="{{ url_for('play') }}">
     <button class="button center-block mt-4 cta">PLAY AGAIN</button>
   </a>
