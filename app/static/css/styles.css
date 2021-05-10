@@ -1,5 +1,47 @@
 * {
-  font-family: "Bangers";
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: #13C16D;
+}
+
+a:hover {
+    color: #11AD62;
+}
+
+.container {
+    margin-top: 1rem;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1272px) {
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 7rem;
+    }
+}
+
+
+#logo {
+    display: inline;
+    max-height: 2rem;
+    margin: 0 0.25rem 0.5rem 0.25rem;
+}
+
+#title {
+    display: inline;
 }
 
 #bg {
@@ -8,20 +50,36 @@
   padding-bottom: 100px;
 }
 
-.button {
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 2rem;
-  padding: 0.6rem 3rem;
-  background: #ff6384;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  font-size: 2rem;
+.nav-item {
+    margin: 0.25rem 1rem 0 1rem;
 }
 
-.stock {
-  font-family: "Lato";
+#result-img {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    border-radius: 0.5rem;
+    margin: 1rem 0 1rem 0;
 }
+
+.button {
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.6rem 3rem;
+  background: #13C16D;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.play-button {
+    padding: 0.6rem 6rem;
+}
+
+.button:hover {
+    background: #11AD62;
+}
+
 
 h1,
 h2,
@@ -29,6 +87,7 @@ h3,
 h4,
 h5 {
   color: #2c3539;
+  font-weight: 900;
 }
 
 form p {
@@ -72,6 +131,11 @@ td {
   float: right;
 }
 
-.ld-head {
-  color: #2f2f2f;
+#leaderboard-title {
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+}
+
+.chart {
+    max-width: 90%;
 }

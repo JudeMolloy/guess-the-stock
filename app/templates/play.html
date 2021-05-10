@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% block content %}
 
-<div style="width: 80%; height: 20%; margin: auto">
-  <h1 class="left">Timer: <span id="timer">10</span></h1>
-  <h1 class="right" text-end>Score: {{ score }}</h1>
-  <canvas id="myChart"></canvas>
+<div class="center">
+  <h1 class="left">TIMER: <span id="timer">10</span></h1>
+  <h1 class="right">SCORE: {{ score }}</h1>
+  <canvas id="myChart" ></canvas>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <form method="post">
@@ -96,7 +96,7 @@
         datasets: [{
             lineTension: 0,
             pointBorderRadius: 0,
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(19, 193, 109)',
             data: price_dict["data"]
         }]},
       options: {

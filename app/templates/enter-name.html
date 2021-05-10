@@ -1,29 +1,15 @@
 {% extends "base.html" %} {% block content %}
-<div class="start">
+<div class="start center">
   <div class="text-center mt-4">
-    <h1>Guess the Stock!</h1>
-    <br />
-    <h2>Enter your name to start!</h2>
+    <img id="result-img" style="min-width: 20rem;" src="{{ url_for('static', filename='img/stocks.gif') }}" />
+    <h2>ENTER YOUR NAME TO START!</h2>
 
     <form action="" method="post" style="padding-bottom: 100px">
       {{ form.hidden_tag() }}
       <p>{{ form.name(size=16, placeholder="Elon Musk (Doge King)") }}</p>
-      <button type="submit" class="button center-block mt-4 cta">Play</button>
+      <button type="submit" class="button play-button center-block mt-4 cta">PLAY</button>
     </form>
 
-    <h1 class="lb-head" style="font-size: 50px">Leaderboard</h1>
-    <table>
-      <tr>
-        <th class="lb-head">Name</th>
-        <th class="lb-head">Score</th>
-      </tr>
-      {% for entry in leaderboard %}
-      <tr>
-        <td>{{ entry.name }}</td>
-        <td>{{ entry.score }}</td>
-      </tr>
-      {% endfor %}
-    </table>
   </div>
 </div>
 

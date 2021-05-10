@@ -9,6 +9,7 @@ from app.models import Leaderboard, StockData
 from sqlalchemy import func, desc
 from data import Data
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
@@ -17,9 +18,8 @@ def index():
         session['name'] = form.name.data
         session['score'] = 0
         return redirect(url_for("play"))
-    leaderboard_data = Leaderboard.query.order_by(desc(Leaderboard.score)).limit(10).all()
-    print(leaderboard_data)
-    return render_template("enter-name.html", form=form, leaderboard=leaderboard_data)
+    return render_template("enter-name.html", form=form)
+
 
 @app.route('/play', methods=['GET', 'POST'])
 def play():
@@ -59,17 +59,28 @@ def game_over():
     session['score'] = 0
 
     img = "elon-cry.gif"
-    message = "That was so bad you made Elon cry."
+    message = "THAT WAS SO BAD YOU MADE ELON CRY."
 
     if score > 9:
         img = "jordan.gif"
-        message = "You are The Wolf of Wall Street."
+        message = "YOU ARE THE WOLF OF WALL STREET."
     elif score > 4:
         img = "mark-cuban.gif"
-        message = "Mark Cuban thinks you have potential."
+        message = "MARK CUBAN THINKS YOU HAVE POTENTIAL."
     elif score > 0:
         img = "zucc.webp"
-        message = "Go back to eating toast without butter like Zucc."
+        message = "GO BACK TO EATING TOAST WITHOUT BUTTER LIKE ZUCC."
 
 
     return render_template("game-over.html", name=name, score=score, img=img, message=message)
+
+
+@app.route('/leaderboard')
+def leaderboard():
+    leaderboard_data = Leaderboard.query.order_by(desc(Leaderboard.score)).limit(10).all()
+    return render_template("leaderboard.html", leaderboard=leaderboard_data)
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
