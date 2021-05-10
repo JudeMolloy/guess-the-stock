@@ -149,8 +149,8 @@ table,
 th,
 td {
   margin: auto;
-  padding: 0 100px 0 100px;
-  font-size: 40px;
+  padding: 0 3rem 0 3rem;
+  font-size: 2rem;
 }
 
 td {
