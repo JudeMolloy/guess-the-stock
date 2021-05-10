@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1 id="leaderboard-title">&#127942; LEADERBOARD &#127942;</h1>
+    <table>
+      <tr>
+        <th class="lb-head" style="text-decoration: underline;">NAME</th>
+        <th class="lb-head" style="color: #13C16D; text-decoration: underline;">SCORE</th>
+      </tr>
+      {% for entry in leaderboard %}
+      <tr>
+        <td>{{ entry.name }}</td>
+        <td style="color: #13C16D; text-align: center;">{{ entry.score }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+{% endblock %}
