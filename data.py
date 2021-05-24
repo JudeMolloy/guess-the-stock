@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-script = True
+script = False
 
 if script:
     
