@@ -6,9 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-script = False
-
-if script:
+def update_stocks():
     
     MARKET_STACK_API_KEY = os.getenv('MARKET_STACK_API_KEY')
 
