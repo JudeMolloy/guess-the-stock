@@ -6,5 +6,6 @@ class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'This is a very big secret'
 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-                              'sqlite:///' + os.path.join(basedir, 'app.db').replace("postgres://", "postgresql://", 1)
+                              'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://", 1)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
