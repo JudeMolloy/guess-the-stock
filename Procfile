@@ -1,1 +1,1 @@
-web: gunicorn guessthestock:app
+web: flask db upgrade; gunicorn guessthestock:app
